@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DenemeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,10 +28,13 @@ Route::match(['get','post'],'/birles',function (){
 });
 
 //Parametre Alma
-Route::get('{name?}',function ($name){
+/*Route::get('{name?}',function ($name){
     //return $name;
     echo $name;
 });
 Route::get('/{id}',function ($id){
     return $id;
-});
+});*/
+
+Route::get('/deneme',[DenemeController::class,'index']);
+
