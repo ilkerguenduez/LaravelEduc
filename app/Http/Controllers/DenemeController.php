@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 
 class DenemeController extends Controller
 {
-    public function index()
+    public function index($name=null,$surname=null)
     {
-        echo "Deneme Sayfasi controller index part";
+        //echo "Deneme Sayfasi controller index part $name $surname";
+        echo $name." ".$surname;
     }
 }

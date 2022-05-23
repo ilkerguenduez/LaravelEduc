@@ -37,4 +37,6 @@ Route::get('/{id}',function ($id){
 });*/
 
 Route::get('/deneme',[DenemeController::class,'index']);
+Route::get('/deneme/{name?}',[DenemeController::class,'index']);
+Route::get('/deneme/{name?}/{surname?}',[DenemeController::class,'index']);
 
