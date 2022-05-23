@@ -16,3 +16,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/laravel',function(){
+    return "Laravel Sayfasi";
+});
+
+//Get ve Post birlikte yakalama
+Route::match(['get','post'],'/birles',function (){
+   return "Ana";
+});
+
+//Parametre Alma
+Route::get('{name?}',function ($name){
+    //return $name;
+    echo $name;
+});
+Route::get('/{id}',function ($id){
+    return $id;
+});
