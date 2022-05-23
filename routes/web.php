@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\admin\indexController;
 use App\Http\Controllers\DenemeController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,9 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return view('welcome');
-});
+});*/
 
 Route::get('/laravel',function(){
     return "Laravel Sayfasi";
@@ -40,3 +41,14 @@ Route::get('/deneme',[DenemeController::class,'index']);
 Route::get('/deneme/{name?}',[DenemeController::class,'index']);
 Route::get('/deneme/{name?}/{surname?}',[DenemeController::class,'index']);
 
+
+/*Route::get('/admin',[indexController::class,'panel']);
+Route::get('/',[indexController::class,'anasayfa']);*/
+
+Route::group(['namespace'=>'admin','prefix'=>'admin'],function (){
+     Route::get('/',[indexController::class,'index']);
+     Route::group(['namespace'=>'kullanici','prefix'=>'kullanici'],function (){
+         Route::get('/ekle',[App\Http\Controllers\admin\kullanici\indexController::class,'ekle']);
+     });
+
+});
