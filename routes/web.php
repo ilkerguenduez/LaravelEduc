@@ -52,3 +52,8 @@ Route::group(['namespace'=>'admin','prefix'=>'admin'],function (){
      });
 
 });
+
+Route::group(['namespace'=>'front'],function (){
+   Route::get('/',[\App\Http\Controllers\front\indexController::class,'index']);
+   //Route::group(['namespace'=>'blogvb']);
+});
