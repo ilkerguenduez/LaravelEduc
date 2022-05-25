@@ -9,8 +9,9 @@ class indexController extends Controller
 {
     public function index()
     {
-       echo "Admin Paneli";
-        echo '<a href="'.route('admin.kullanici.ekle').'">Kullanıcı ekleme Sayfası</a>';
+        echo "Admin Paneli";
+        //echo '<a href="'.route('admin.kullanici.ekle').'">Kullanıcı ekleme Sayfası</a>';
+        return view('admin.index');
     }
     /*public function anasayfa(){
         echo "Anasayfa";
