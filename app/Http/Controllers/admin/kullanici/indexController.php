@@ -8,6 +8,6 @@ use Illuminate\Http\Request;
 class indexController extends Controller
 {
     public function ekle(){
-        echo "Kullanici ekleme sayfasi";
+        echo '<a href="'.route('index').'">AnaSayfa</a>';
     }
 }

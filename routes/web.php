@@ -45,15 +45,15 @@ Route::get('/deneme/{name?}/{surname?}',[DenemeController::class,'index']);
 /*Route::get('/admin',[indexController::class,'panel']);
 Route::get('/',[indexController::class,'anasayfa']);*/
 
-Route::group(['namespace'=>'admin','prefix'=>'admin'],function (){
-     Route::get('/',[indexController::class,'index']);
-     Route::group(['namespace'=>'kullanici','prefix'=>'kullanici'],function (){
-         Route::get('/ekle',[App\Http\Controllers\admin\kullanici\indexController::class,'ekle']);
+Route::group(['namespace'=>'admin','prefix'=>'admin','as'=>'admin.'],function (){
+     Route::get('/',[indexController::class,'index'])->name('index');
+     Route::group(['namespace'=>'kullanici','prefix'=>'kullanici','as'=>'kullanici.'],function (){
+         Route::get('/ekle',[App\Http\Controllers\admin\kullanici\indexController::class,'ekle'])->name('ekle');
      });
 
 });
 
 Route::group(['namespace'=>'front'],function (){
-   Route::get('/',[\App\Http\Controllers\front\indexController::class,'index']);
+   Route::get('/',[\App\Http\Controllers\front\indexController::class,'index'])->name('index');
    //Route::group(['namespace'=>'blogvb']);
 });
