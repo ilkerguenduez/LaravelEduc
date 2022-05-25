@@ -9,6 +9,8 @@ class indexController extends Controller
 {
     public function index(){
         //echo '<a href="'.route('admin.index').'">Admin Sayfası</a>';
-        return view('index');
+        $data =['name'=>'Ilker','surname'=>'Guenduez','info'=>['age'=>'21','job'=>'Software Developer']];
+        return view('index',$data);
+
     }
 }
