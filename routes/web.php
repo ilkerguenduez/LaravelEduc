@@ -68,7 +68,17 @@ Route::get('/users',function (){
 //        echo $value->id." => ".$value->name."<br/>";
 //    }
 
-    $users=DB::table('users')->first();
-    echo $users->name;
+//    $users=DB::table('users')->first();
+//    echo $users->name;
+
+//    $users=DB::table('users')->where('id','=','1')->get();
+//    dd($users);
+
+//    $users=DB::table('users')->pluck('name','surname');
+//    dd($users);
+
+//    DB::table('users')->orderBy('id')->chunk(3,function ($users){
+//        dd($users);
+//    });
 
 });
