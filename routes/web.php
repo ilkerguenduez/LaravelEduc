@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\indexController;
 use App\Http\Controllers\DenemeController;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -56,4 +57,18 @@ Route::group(['namespace'=>'admin','prefix'=>'admin','as'=>'admin.'],function ()
 Route::group(['namespace'=>'front'],function (){
    Route::get('/',[\App\Http\Controllers\front\indexController::class,'index'])->name('index');
    //Route::group(['namespace'=>'blogvb']);
+});
+
+Route::get('/users',function (){
+
+    //echo "Burası Kullanıcı Listesi";
+//    $users= DB::table('users')->get();
+    //dd($users);
+//    foreach ($users as $key => $value){
+//        echo $value->id." => ".$value->name."<br/>";
+//    }
+
+    $users=DB::table('users')->first();
+    echo $users->name;
+
 });
