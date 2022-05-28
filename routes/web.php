@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\indexController;
 use App\Http\Controllers\DenemeController;
+use App\Models\Kitap;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -86,6 +87,20 @@ Route::get('/users',function (){
 });
 
 Route::get('/kitaplar',function (){
-    $x=\App\Models\Kitap::all();
-    dd($x);
+//    $x=\App\Models\Kitap::all();
+//    dd($x);
+
+//    $data= Kitap::all();
+//    foreach ($data as $key=> $value){
+//        echo $value['isim']."<br/>";
+//    }
+
+//    $data=Kitap::where('yazarid','=',1)->get();
+//    dd($data);
+
+    $x=Kitap::orderBy('isim','desc')->get();
+
+    foreach ($x as $key=>$value) {
+        echo $value['isim']."<br/>";
+    }
 });
