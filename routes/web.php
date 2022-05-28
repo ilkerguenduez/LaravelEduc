@@ -81,4 +81,11 @@ Route::get('/users',function (){
 //        dd($users);
 //    });
 
+
+
+});
+
+Route::get('/kitaplar',function (){
+    $x=\App\Models\Kitap::all();
+    dd($x);
 });
