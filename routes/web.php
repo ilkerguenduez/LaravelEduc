@@ -3,6 +3,7 @@
 use App\Http\Controllers\admin\indexController;
 use App\Http\Controllers\DenemeController;
 use App\Models\Kitap;
+use App\Models\Yazarlar;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
@@ -98,9 +99,21 @@ Route::get('/kitaplar',function (){
 //    $data=Kitap::where('yazarid','=',1)->get();
 //    dd($data);
 
-    $x=Kitap::orderBy('isim','desc')->get();
+//    $x=Kitap::orderBy('isim','desc')->get();
+//
+//    foreach ($x as $key=>$value) {
+//        echo $value['isim']."<br/>";
+//    }
 
-    foreach ($x as $key=>$value) {
-        echo $value['isim']."<br/>";
-    }
+//    $kitap=new Kitap();
+//    $kitap->isim="Harry Potter - Ölüm Yadigarlari";
+//    $kitap->yazarid="1";
+//    $kitap->save();
+
+//    $yazar=new Yazarlar();
+//    $yazar->name="Ben";
+//    $yazar->save();
+
+
+    Yazarlar::create(['name'=>'Ben3']);
 });

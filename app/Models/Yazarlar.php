@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Yazarlar extends Model
 {
     use HasFactory;
+    protected $fillable=['name']; //ekler
+    //protected $guarded=['created_at']; //eklemez
 }
