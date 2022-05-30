@@ -121,7 +121,19 @@ Route::get('/kitaplar',function (){
 //    $yazar->id=321;
 //    $yazar->save();
 
-    Yazarlar::where('id','=',3)->update(['id'=>456]);
+    //Yazarlar::where('id','=',3)->update(['id'=>456]);
+
+//    $yazar = Yazarlar::find(456);
+//    $yazar->delete();
+
+    $x= Yazarlar::where('id','=',321)->delete();
+    if ($x){
+        echo 'veri silindi';
+
+    }
+    else{
+        echo 'veri silinemedi';
+    }
 
 
 });
