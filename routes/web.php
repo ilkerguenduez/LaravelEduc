@@ -115,5 +115,13 @@ Route::get('/kitaplar',function (){
 //    $yazar->save();
 
 
-    Yazarlar::create(['name'=>'Ben3']);
+    //Yazarlar::create(['name'=>'Ben3']);
+
+//    $yazar=  Yazarlar::find(2);
+//    $yazar->id=321;
+//    $yazar->save();
+
+    Yazarlar::where('id','=',3)->update(['id'=>456]);
+
+
 });
