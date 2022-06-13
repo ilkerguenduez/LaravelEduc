@@ -139,7 +139,7 @@ Route::get('/kitaplar',function (){
     //firstOrCreate
     //FirstOrNew
 
-    $yazar = Yazarlar::firstOrCreate(['name'=>'Ben6'],['id'=>15]);
-    dd($yazar);
+//    $yazar = Yazarlar::firstOrCreate(['name'=>'Ben6'],['id'=>15]);
+//    dd($yazar);
 
 });
