@@ -126,14 +126,20 @@ Route::get('/kitaplar',function (){
 //    $yazar = Yazarlar::find(456);
 //    $yazar->delete();
 
-    $x= Yazarlar::where('id','=',321)->delete();
-    if ($x){
-        echo 'veri silindi';
+//    $x= Yazarlar::where('id','=',321)->delete();
+//    if ($x){
+//        echo 'veri silindi';
+//
+//    }
+//    else{
+//        echo 'veri silinemedi';
+//    }
 
-    }
-    else{
-        echo 'veri silinemedi';
-    }
 
+    //firstOrCreate
+    //FirstOrNew
+
+    $yazar = Yazarlar::firstOrCreate(['name'=>'Ben6'],['id'=>15]);
+    dd($yazar);
 
 });
